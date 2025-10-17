@@ -1,0 +1,9 @@
+#include<stdio.h>
+        int main ()
+        {
+            printf ("coisa feia");
+            printf ("1+2");
+  
+
+
+        }
