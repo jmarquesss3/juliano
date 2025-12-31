@@ -1,0 +1,112 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração das matrizes inicializadas com 0
+    int matriz1[10][10] = {0};
+    int matriz2[10][10] = {0};
+    int matriz3[10][10] = {0};
+  int matriz4[10][10] = {0};
+  int matriz5[10][10] = {0};
+
+    int i, j; // Variáveis de controle para as coordenadas
+
+    // --- MODIFICANDO A MATRIZ 1 (Vertical e Horizontal) ---
+    i = 3; j = 5;
+    matriz1[i][j] = 3; 
+    matriz1[i + 1][j] = 3; 
+    matriz1[i + 2][j] = 3;
+
+    matriz1[i+3][j+2] = 3;
+    matriz1[i+3][j+3] = 3;
+    matriz1[i+3][j+4] = 3;
+
+    // --- MODIFICANDO A MATRIZ 2 (Diagonais) ---
+    i = 2; j = 1;
+    matriz2[i][j] = 4; 
+    matriz2[i + 1][j + 1] = 3;
+    matriz2[i + 2][j + 2] = 3;
+
+    i = 0; j = 9; 
+    matriz2[i][j] = 9;
+    matriz2[i + 1][j - 1] = 3;
+    matriz2[i + 2][j - 2] = 3;
+
+    // --- MODIFICANDO A MATRIZ 3 (Pirâmide) ---
+    i = 2; j = 5; // Topo da pirâmide
+    // Camada 1 (Topo)
+    matriz3[i][j] = 1; 
+    // Camada 2 (Meio)
+    matriz3[i + 1][j - 1] = 5;
+    matriz3[i + 1][j]     = 5;
+    matriz3[i + 1][j + 1] = 5;
+    // Camada 3 (Base)
+    matriz3[i + 2][j - 2] = 5;
+    matriz3[i + 2][j - 1] = 5;
+    matriz3[i + 2][j]     = 5;
+    matriz3[i + 2][j + 1] = 5;
+    matriz3[i + 2][j + 2] = 5;
+
+ // --- MODIFICANDO A MATRIZ 4 (cruz) ---
+    i = 3; j = 5;
+    matriz4[i][j] = 3; 
+    matriz4[i + 1][j] = 3; 
+    matriz4[i + 2][j] = 3;
+
+ matriz4[i+1 ][j-1] = 3; 
+    matriz4[i +1][j+1] = 3;
+
+ // --- MODIFICANDO A MATRIZ 5 (octaedro) ---
+    i = 3; j = 5;
+    matriz5[i][j] = 3; 
+ matriz5[i +1][j-2] = 3; 
+ matriz5[i +1][j+2] = 3; 
+ matriz5[i -1][j] = 3; 
+matriz5[i +3][j] = 3; 
+    matriz5[i + 1][j] = 3; 
+    matriz5[i + 2][j] = 3;
+
+ matriz5[i+1 ][j-1] = 3; 
+    matriz5[i +1][j+1] = 3;
+matriz5[i][j-1] = 5; 
+    matriz5[i ][j+1] = 5;
+
+matriz5[i+2][j-1] = 5; 
+    matriz5[i+2 ][j+1] = 5;
+
+    // --- IMPRESSÃO DOS TABULEIROS ---
+
+    printf("TABULEIRO 1 (veritcak e horizontal)\n    0 1 2 3 4 5 6 7 8 9\n   ---------------------\n");
+    for (int lin = 0; lin < 10; lin++) {
+        printf("%d | ", lin);
+        for (int col = 0; col < 10; col++) printf("%d ", matriz1[lin][col]);
+        printf("\n");
+    }
+
+    printf("\n\nTABULEIRO 2(diagonal)\n    0 1 2 3 4 5 6 7 8 9\n   ---------------------\n");
+    for (int lin = 0; lin < 10; lin++) {
+        printf("%d | ", lin);
+        for (int col = 0; col < 10; col++) printf("%d ", matriz2[lin][col]);
+        printf("\n");
+    }
+
+    printf("\n\nTABULEIRO 3 (PIRAMIDE)\n    0 1 2 3 4 5 6 7 8 9\n   ---------------------\n");
+    for (int lin = 0; lin < 10; lin++) {
+        printf("%d | ", lin);
+        for (int col = 0; col < 10; col++) printf("%d ", matriz3[lin][col]);
+        printf("\n");
+    }
+printf("TABULEIRO 4(cruz)\n    0 1 2 3 4 5 6 7 8 9\n   ---------------------\n");
+    for (int lin = 0; lin < 10; lin++) {
+        printf("%d | ", lin);
+        for (int col = 0; col < 10; col++) printf("%d ", matriz4[lin][col]);
+        printf("\n");
+    }
+printf("TABULEIRO 5\n    0 1 2 3 4 5 6 7 8 9\n   ---------------------\n");
+    for (int lin = 0; lin < 10; lin++) {
+        printf("%d | ", lin);
+        for (int col = 0; col < 10; col++) printf("%d ", matriz5[lin][col]);
+        printf("\n");
+    }
+
+    return 0;
+}
